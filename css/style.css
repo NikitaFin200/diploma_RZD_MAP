@@ -1,0 +1,201 @@
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Хедер */
+#header {
+    background-color: #e30613; /* Красный цвет РЖД */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header_rzd {
+    width: 50px;
+    height: 50px;
+    background: url('логотип_ржд.png') no-repeat center center;
+    background-size: contain;
+}
+
+.site_label .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.site_menu {
+    color: white;
+    font-size: 1em;
+}
+
+/* Футер */
+.footer {
+    background-color: #6d6e71; /* Серый цвет РЖД */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: auto;
+}
+
+.footer .small_text {
+    font-size: 0.8em;
+}
+
+/* Контент */
+.__content {
+    flex-grow: 1;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #e30613; /* Красная рамка в цветах РЖД */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.map-container {
+    position: relative;
+    display: inline-block; /* Устанавливаем inline-block для контейнера */
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #e30613;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.btn-auth {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d52b1e; /* Красный цвет РЖД */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: #b02518; /* Более темный оттенок */
+}
+
+.auth_button {
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Общий стиль страницы */
+body_auth {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #d52b1e 0%, #fff 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер авторизации */
+.login-container {
+    background-color: #ffffff;
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #d52b1e; /* Красная полоса в стиле РЖД */
+    text-align: center;
+}
+
+/* Заголовок */
+.login-container h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d52b1e; /* Красный цвет РЖД */
+}
+
+/* Метки полей */
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Поля ввода */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Кнопка входа */
+.login-container button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #d52b1e; /* Красный цвет РЖД */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #b02518; /* Более темный красный */
+}
+
+/* Сообщение об ошибке */
+.login-container .error {
+    color: #d52b1e;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid #d52b1e;
+    margin-bottom: 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        font-size: 12px;
+    }
+
+    .login-container button {
+        font-size: 14px;
+    }
+}
