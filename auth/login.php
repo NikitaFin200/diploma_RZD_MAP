@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Проверяем, что username не пустой
+    // Проверяем, что username и password не пустые
     if (empty($username) || empty($password)) {
         $error = "Пожалуйста, введите логин и пароль.";
     } else {
@@ -21,12 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt) {
             $stmt->bind_param("s", $username);
             $stmt->execute();
-            $result = $stmt->get_result();
-            $user = $result->fetch_assoc();
+            $result = $stmt->get_result(); // Получаем результат запроса
+            $user = $result->fetch_assoc(); // Извлекаем данные пользователя
 
             // Если пользователь найден и пароль совпадает
             if ($user && $password == $user['password']) {
                 $_SESSION['user'] = $user['username'];
+                $_SESSION['is_admin'] = (bool)$user['admin']; // Сохраняем роль admin
+                $_SESSION['is_worker'] = (bool)$user['worker']; // Сохраняем роль worker
                 header("Location: dashboard.php");
                 exit;
             } else {
@@ -40,9 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -69,4 +68,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body_auth>
 </html>
-

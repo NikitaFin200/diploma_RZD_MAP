@@ -1,32 +1,28 @@
 <?php
-session_start();  // Стартуем сессию
-
+session_start();
 require_once "PDOEngine.php";
 
-// Проверка авторизации
 if (!isset($_SESSION['user'])) {
     echo json_encode(['success' => false, 'error' => 'Только авторизованные пользователи могут добавлять точки']);
     exit;
 }
 
-// Проверка данных из POST-запроса
 $pointer_x = $_POST['pointer_x'] ?? null;
 $pointer_y = $_POST['pointer_y'] ?? null;
+$name = $_POST['name'] ?? '';
 
-if ($pointer_x === null || $pointer_y === null) {
-    echo json_encode(['success' => false, 'error' => 'Некорректные координаты']);
+if ($pointer_x === null || $pointer_y === null || empty($name)) {
+    echo json_encode(['success' => false, 'error' => 'Некорректные данные']);
     exit;
 }
 
 try {
-    // Подготовка SQL-запроса для вставки данных
-    $stmt = $conn->prepare("INSERT INTO coord (pointer_x, pointer_y) VALUES (?, ?)");
+    $stmt = $conn->prepare("INSERT INTO coord (pointer_x, pointer_y, name) VALUES (?, ?, ?)");
     if (!$stmt) {
         throw new Exception("Ошибка подготовки запроса: " . $conn->error);
     }
 
-    // Привязка параметров и выполнение запроса
-    $stmt->bind_param("ii", $pointer_x, $pointer_y);
+    $stmt->bind_param("dds", $pointer_x, $pointer_y, $name);
     if ($stmt->execute()) {
         echo json_encode(['success' => true]);
     } else {

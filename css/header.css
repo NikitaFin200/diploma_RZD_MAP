@@ -1,0 +1,77 @@
+/* Хедер */
+#header {
+    background-color: #e30613;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header_rzd {
+    width: 50px;
+    height: 50px;
+    background: url('логотип_ржд.png') no-repeat center center;
+    background-size: contain;
+}
+
+.site_label .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.site_menu {
+    color: white;
+    font-size: 1em;
+}
+
+/* Стили для ссылок в меню */
+.site_menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px; /* Отступы для удобства клика */
+    border-radius: 4px; /* Закругленные углы */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход */
+}
+
+/* Кнопка "Личный кабинет" */
+.site_menu a[href="auth/dashboard.php"] {
+    background-color: #d52b1e; /* Основной красный */
+    margin-right: 5px; /* Отступ между кнопками */
+}
+
+.site_menu a[href="auth/dashboard.php"]:hover {
+    background-color: #b02518; /* Темнее при наведении */
+}
+
+/* Кнопка "Выйти" */
+.site_menu a[href="auth/logout.php"] {
+    background-color: #6d6e71; /* Серый */
+}
+
+.site_menu a[href="auth/logout.php"]:hover {
+    background-color: #555; /* Темнее серый при наведении */
+}
+
+/* Кнопка "Войти" (уже есть, для согласованности) */
+.btn-auth {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d52b1e;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: #b02518;
+}
+
+.site_label .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}

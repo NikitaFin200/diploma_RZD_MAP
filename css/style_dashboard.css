@@ -1,0 +1,70 @@
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #ffffff 0%, #d52b1e 100%); /* Плавный градиент */
+    color: #333;
+}
+
+/* Контейнер личного кабинета */
+.profile-container {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #d52b1e; /* Красная полоса в стиле РЖД */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Заголовок личного кабинета */
+.profile-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d52b1e; /* Красный цвет РЖД */
+    margin-bottom: 20px;
+}
+
+/* Кнопка выхода */
+.btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #d52b1e; /* Красный цвет РЖД */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.btn-logout:hover {
+    background-color: #b02518; /* Более темный оттенок */
+}
+
+/* Ссылка на главную страницу */
+.home-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d52b1e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-link:hover {
+    color: #b02518; /* Более темный оттенок */
+}
+
+/* Адаптивность */
+@media (max-width: 450px) {
+    .profile-container {
+        width: 90%;
+    }
+}

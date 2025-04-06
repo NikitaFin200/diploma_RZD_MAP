@@ -19,7 +19,9 @@
 $hdrPageName = getPageName();
 */
 ?>
-
+<head>
+<link rel="stylesheet" href="../css/header.css">
+</head>
 <?php
 session_start(); // Стартуем сессию
 ?>
@@ -36,8 +38,8 @@ session_start(); // Стартуем сессию
     <div class="site_menu">
         <?php if (isset($_SESSION['user'])): ?>
             <!-- Меню для авторизованных пользователей -->
-            <a href="auth/dashboard.php">Личный кабинет</a> |
-            <a href="auth/logout.php">Выйти</a>
+            <a href="../auth/dashboard.php">Личный кабинет</a> |
+            <a href="../auth/logout.php">Выйти</a>
         <?php else: ?>
             <!-- Кнопка входа для неавторизованных пользователей -->
             <a href="auth/login.php" class="btn-auth">Войти</a>
